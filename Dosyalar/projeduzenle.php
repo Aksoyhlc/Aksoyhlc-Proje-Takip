@@ -78,7 +78,7 @@ $dosyayolu=$projecek['dosya_yolu']
 							</div>
 
 							<div class="form-row justify-content-center">	
-																<div class="col-md-6">
+								<div class="col-md-6">
 									<div class="file-loading">
 										<input type="file" class="form-control" id="projedosya" name="proje_dosya" >
 									</div>
@@ -119,7 +119,9 @@ if (strlen($dosyayolu)>10) {?>
 			'<img src="<?php echo $dosyayolu ?>" style="height:100px" class="file-preview-image" alt="Dosya" title="Dosya">'
 			],
 			initialPreviewConfig: [
-			{downloadUrl: url1},
+			{downloadUrl: url1,
+				showRemove: false,
+			},
 			],
 		});
 
