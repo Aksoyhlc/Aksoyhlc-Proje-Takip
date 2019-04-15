@@ -93,38 +93,6 @@ if (isset($_POST['sip_id'])) {
 								</div>
 							</div>			
 							<div class="form-row">
-								<div class="form-group col-md-6">
-									<label>Görevliler</label>
-									<select multiple name="sip_kullanici[]" class="form-control">
-										<?php 
-										$kullanicisor=$db->prepare("SELECT kul_id, kul_isim FROM kullanicilar");
-										$kullanicisor->execute();
-										$siparissor=$db->prepare("SELECT * FROM sip_kul_bag where sip_id={$_POST['sip_id']}");
-										$siparissor->execute();
-										$sip_id_dizisi=array();
-										$id_dizisi=array();
-										$isim_dizisi=array();
-										$sayi=0;
-										while ($kullanicicek=$kullanicisor->fetch(PDO::FETCH_ASSOC)) { 
-											array_push($id_dizisi, $kullanicicek['kul_id']);
-											array_push($isim_dizisi, $kullanicicek['kul_isim']);
-										};
-
-										while ($sipariscek=$siparissor->fetch(PDO::FETCH_ASSOC)) { 
-											array_push($sip_id_dizisi, $sipariscek['kul_id']);
-										};
-
-										foreach ($id_dizisi as $kontol_edilecek_id) {
-											if (in_array($kontol_edilecek_id, $sip_id_dizisi )) {?>
-												<option selected value="<?php echo $kontol_edilecek_id ?>"><?php echo $isim_dizisi[$sayi]; ?></option>
-											<?php  	} else {?>
-												<option value="<?php echo $kontol_edilecek_id ?>"><?php echo $isim_dizisi[$sayi]; ?></option>
-											<?php	}
-											$sayi++;
-										}
-										?>
-									</select>
-								</div>
 								<div class="col-md-6">
 									<div class="file-loading">
 										<input type="file" class="form-control" id="sipdosya" name="sip_dosya" >
@@ -170,7 +138,9 @@ if (isset($_POST['sip_id'])) {
 			'<img src="<?php echo $kayitcek['dosya_yolu'] ?>" style="height:90px" class="file-preview-image" alt="Dosya" title="Dosya">'
 			],
 			initialPreviewConfig: [
-			{downloadUrl: url1},
+			{downloadUrl: url1,
+				showRemove: false,
+			},
 			],
 		});
 
@@ -192,6 +162,3 @@ if (isset($_POST['sip_id'])) {
 			});
 		</script>
 	<?php } ?>
-
-
-	
