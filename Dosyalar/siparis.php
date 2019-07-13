@@ -40,12 +40,12 @@ $dosyayolu=$sipariscek['dosya_yolu'];
 					<form action="islemler/islem.php" method="POST">
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label>Proje Başlık</label>
+								<label>Sipariş Başlık</label>
 								<input disabled type="text" class="form-control" name="sip_baslik" value="<?php echo $sipariscek['sip_baslik'] ?>">
 							</div>
 							<div class="form-group col-md-6">
 								<label>Bitirme Tarihi</label>
-								<input disabled type="date" class="form-control" name="proje_teslim_tarihi" value="<?php echo $sipariscek['proje_teslim_tarihi'] ?>">
+								<input disabled type="date" class="form-control" name="sip_teslim_tarihi" value="<?php echo $sipariscek['sip_teslim_tarihi'] ?>">
 							</div>
 						</div>
 
@@ -57,7 +57,7 @@ $dosyayolu=$sipariscek['dosya_yolu'];
 							</div>
 							<?php $durum=$sipariscek['sip_durum']; ?>
 							<div disabled class="form-group col-md-6">
-								<label>Proje Durumu</label>
+								<label>Sipariş Durumu</label>
 								<input disabled type="text" class="form-control" value="<?php echo $durum ?>">
 							</div>
 						</div>
@@ -128,8 +128,7 @@ $dosyayolu=$sipariscek['dosya_yolu'];
 <?php include 'footer.php' ?>
 <script src="ckeditor/ckeditor.js"></script>
 <script>
-	CKEDITOR.replace('editor',{
-	});
+	CKEDITOR.replace('editor');
 </script>
 
 

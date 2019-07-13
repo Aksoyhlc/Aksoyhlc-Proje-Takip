@@ -511,11 +511,11 @@ if (isset($_POST['profilguncelle'])) {
 
          if ($kontrol) {
 //echo "kayıt başarılı";
-          header("location:../projeler?durum=ok");
+          header("location:../siparisler?durum=ok");
           exit;
         } else {
 //echo "kayıt başarısız";
-          header("location:../projeler?durum=no");
+          header("location:../siparisler?durum=no");
           exit;
 
         }
