@@ -62,32 +62,20 @@ if (yetkikontrol()!="yetkili") {
         </select>
       </div> 
     </div>
-    <div class="form-row mb-3">
-     <div class="form-group col-md-6">
-      <label>Görevliler</label>
-      <select multiple required name="sip_kullanici[]" class="form-control">
-       <?php 
-       $kullanici=$db->prepare("SELECT * FROM kullanicilar");
-       $kullanici->execute();
-       while ($kullanicicek=$kullanici->fetch(PDO::FETCH_ASSOC)) {?>
-        <option value="<?php echo $kullanicicek['kul_id']; ?>"><?php echo $kullanicicek['kul_isim']; ?></option>
-
-      <?php } ?>
-    </select>
-  </div>
-  <div class="col-md-6">
-    <div class="file-loading">
-      <input class="form-control" id="proje_dosya" required name="proje_dosya" type="file">
+    <div class="form-row d-flex justify-content-center mb-3">
+      <div class="col-md-6">
+        <div class="file-loading">
+          <input class="form-control" id="sip_dosya" required name="sip_dosya" type="file">
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="form-row">
-  <div class="form-group col-md-12">
-    <textarea class="ckeditor" required name="sip_detay" id="editor"></textarea>
-  </div>
-</div>
-<button type="submit" name="siparisekle" class="btn btn-primary">Kaydet</button>
-</form>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <textarea class="ckeditor" required name="sip_detay" id="editor"></textarea>
+      </div>
+    </div>
+    <button type="submit" name="siparisekle" class="btn btn-primary">Kaydet</button>
+  </form>
 </div>
 <!-- End of Main Content -->
 <?php include 'footer.php' ?>
@@ -105,12 +93,12 @@ if (yetkikontrol()!="yetkili") {
 <!--İşlem sonucu açılan bildirim popupunu otomatik kapatma çıkış-->
 <script>
   $(document).ready(function () {
-    $("#proje_dosya").fileinput({
+    $("#sip_dosya").fileinput({
       'theme': 'explorer-fas',
       'showUpload': false,
       'showCaption': true,
       showDownload: true,
-       allowedFileExtensions: ["jpg", "png", "jpeg","mp4","zip","rar"],
+      allowedFileExtensions: ["jpg", "png", "jpeg","mp4","zip","rar"],
     });
   });
 </script>

@@ -40,8 +40,28 @@ $dosyayolu=$sipariscek['dosya_yolu'];
 					<form action="islemler/islem.php" method="POST">
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label>Sipariş Başlık</label>
-								<input disabled type="text" class="form-control" name="sip_baslik" value="<?php echo $sipariscek['sip_baslik'] ?>">
+								<label>İsim Soyisim</label>
+								<input disabled="" type="text" class="form-control" name="musteri_isim" value="<?php echo $sipariscek['musteri_isim'] ?>">
+							</div>
+							<div class="form-group col-md-6">
+								<label>E-Posta</label>
+								<input disabled="" type="email" class="form-control" name="musteri_mail" value="<?php echo $sipariscek['musteri_mail'] ?>">
+							</div>	
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label>Telefon Numarası</label>
+								<input disabled="" type="number" class="form-control" name="musteri_telefon" value="<?php echo $sipariscek['musteri_telefon'] ?>">
+							</div>
+							<div class="form-group col-md-6">
+								<label>Sipariş Başlığı</label>
+								<input disabled="" type="text" class="form-control" name="sip_baslik" value="<?php echo $sipariscek['sip_baslik'] ?>">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label>Ücret (TL)</label>
+								<input disabled="" type="text" class="form-control" name="sip_ucret" value="<?php echo $sipariscek['sip_ucret'] ?>">
 							</div>
 							<div class="form-group col-md-6">
 								<label>Bitirme Tarihi</label>
@@ -62,46 +82,7 @@ $dosyayolu=$sipariscek['dosya_yolu'];
 							</div>
 						</div>
 
-						<div class="form-row justify-content-center">	
-							<div class="form-group col-md-12">
-								<label>Görevliler</label>
-								<div class="table-responsive">
-									<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th>No</th>
-												<th>İsim</th>
-												<th>E-Mail</th>
-												<th>Telefon</th>
-												<th>Ünvan</th>
-											</tr>
-										</thead>
-										<tbody>											
-											<?php 
-											$siparissor=$db->prepare("SELECT kul_id FROM sip_kul_bag where sip_id={$_POST['sip_id']}");
-											$siparissor->execute();
-											$sayi=0;
-
-											while ($sipariscek=$siparissor->fetch(PDO::FETCH_ASSOC)) { 
-												$kullanicisor=$db->prepare("SELECT * FROM kullanicilar where kul_id={$sipariscek['kul_id']}");
-												$kullanicisor->execute();
-
-												$sayi++;?>
-												<tr>
-													<?php $kullanicicek=$kullanicisor->fetch(PDO::FETCH_ASSOC);  ?>
-													<td><?php echo $sayi; ?></td>
-													<td><?php echo $kullanicicek['kul_isim']; ?></td>
-													<td><?php echo $kullanicicek['kul_mail']; ?></td>
-													<td><?php echo $kullanicicek['kul_telefon']; ?></td>
-													<td><?php echo $kullanicicek['kul_unvan']; ?></td>
-												</tr>
-											<?php }?>
-
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>						
+											
 						<div class="form-row">
 							<div class="form-group col-md-12">
 								<textarea disabled class="ckeditor" id="editor">

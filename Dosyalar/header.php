@@ -35,11 +35,17 @@ if ($say==0) {
 	exit;
 };
 
+/*Eğer IP Adresi Değiştiğinde Oturum Sonlandırılmasını İstemiyorsanız Aşağıdaki Satırları Silin*/
+
 if ($kullanicicek['ip_adresi']!=$_SERVER['REMOTE_ADDR']) {
 	header("location:login?durum=suphe");
 	session_destroy();
 	exit;
 }
+
+/*Eğer IP Adresi Değiştiğinde Oturum Sonlandırılmasını İstemiyorsanız Yukarıdaki Satırları Silin*/
+
+
 ?>
 <!DOCTYPE html>
 <html lang="tr">
@@ -102,6 +108,7 @@ if ($kullanicicek['ip_adresi']!=$_SERVER['REMOTE_ADDR']) {
 					Seçenekler
 				</div>
 
+				<!-- Bu Script "Ökkeş Aksoy | Aksoyhlc" Tarafından Hazırlanmıştır -->
 				
 
 				<li class="nav-item">
@@ -155,6 +162,15 @@ if ($kullanicicek['ip_adresi']!=$_SERVER['REMOTE_ADDR']) {
 						</a>
 					</li>
 				<?php } ?>
+
+				<li class="nav-item">
+					<a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+						<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i>
+						<span>Oturumu Kapat</span>
+					</a>
+				</li>
+
+
 
 				<!-- Nav Item - Utilities Collapse Menu -->
 				

@@ -26,7 +26,7 @@ if (yetkikontrol()!="yetkili") {
 			<h5 class="m-0 font-weight-bold text-primary">Site Ayarları</h5>   
 		</div>
 		<div class="card-body">
-			<form action="islemler/islem.php" method="POST" enctype="multipart/form-data"  data-parsley-validate>		
+			<form action="islemler/islem.php" method="POST" enctype="multipart/form-data" data-parsley-validate>		
 				<div class="form-row mb-3">
 					<div class="file-loading">
 						<input class="form-control" id="sitelogosu" name="site_logo" type="file">
@@ -50,8 +50,15 @@ if (yetkikontrol()!="yetkili") {
 						<input type="text" required class="form-control" name="site_sahibi" value="<?php echo $ayarcek['site_sahibi'] ?>" placeholder="Site Sahibi">
 					</div>
 				</div>
+
 				<button type="submit" name="genelayarkaydet" class="btn btn-primary">Kaydet</button>
-			</form>						
+			</form>	
+
+		</div>
+		<div class="card-footer">
+			<div class="form-row">
+				<p>Scriptin Ücretli Ve Çok Daha Fazla Gelişmiş Özelliklere Sahip Sürümünü İncelemek İçin <span><strong><a href="https://link.aksoyhlc.net/aksoyhlc-crm" target="_blank">Buraya Tıklayın</a></strong></span></p>
+			</div>
 		</div>
 	</div>
 </div>

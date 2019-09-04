@@ -243,14 +243,20 @@ include 'header.php';
 							<tbody>
 								<?php 
 								$say=0;
-								$projesor=$db->prepare("SELECT * FROM proje");
+								$projesor=$db->prepare("SELECT * FROM proje ORDER BY proje_id DESC");
 								$projesor->execute();
 								while ($projecek=$projesor->fetch(PDO::FETCH_ASSOC)) { $say++?>
 
 									<tr>
 										<td><?php echo $projecek['proje_baslik']; ?></td>
 										<td><?php echo $projecek['proje_teslim_tarihi']; ?></td>
-										<td><?php echo $projecek['proje_aciliyet']; ?></td>
+										<td><?php 
+										if ($projecek['proje_aciliyet']=="Acil") {
+											echo '<span class="badge badge-danger" style="font-size:1rem">Acil</span>';
+										} else {
+											echo $projecek['proje_aciliyet'];
+										}
+										?></td>
 
 									</tr>
 								<?php } ?>
@@ -281,14 +287,20 @@ include 'header.php';
 							<!--While döngüsü ile veritabanında ki verilerin tabloya çekilme işlemi giriş-->
 							<tbody>
 								<?php 
-								$siparissor=$db->prepare("SELECT * FROM siparis");
+								$siparissor=$db->prepare("SELECT * FROM siparis ORDER BY sip_id DESC");
 								$siparissor->execute();
 								while ($sipariscek=$siparissor->fetch(PDO::FETCH_ASSOC)) { $say++?>
 
 									<tr>
 										<td><?php echo $sipariscek['musteri_isim']; ?></td>										
 										<td><?php echo $sipariscek['sip_teslim_tarihi']; ?></td>
-										<td><?php echo $sipariscek['sip_aciliyet']; ?></td>
+										<td><?php 
+										if ($sipariscek['sip_aciliyet']=="Acil") {
+											echo '<span class="badge badge-danger" style="font-size:1rem">Acil</span>';
+										} else {
+											echo $sipariscek['sip_aciliyet'];
+										}
+										?></td>
 									</tr>
 								<?php }
 								?>

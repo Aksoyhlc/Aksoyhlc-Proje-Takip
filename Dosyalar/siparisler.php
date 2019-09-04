@@ -155,7 +155,7 @@ include'header.php'
             <tbody>
              <?php 
              $say=0;
-             $siparissor=$db->prepare("SELECT * FROM siparis");
+             $siparissor=$db->prepare("SELECT * FROM siparis ORDER BY sip_id DESC");
              $siparissor->execute();
              while ($sipariscek=$siparissor->fetch(PDO::FETCH_ASSOC)) { $say++?>
 
@@ -165,8 +165,20 @@ include'header.php'
                 <td><?php echo $sipariscek['musteri_mail']; ?></td>
                 <td><?php echo $sipariscek['sip_baslik']; ?></td>
                 <td><?php echo $sipariscek['sip_teslim_tarihi']; ?></td>
-                <td><?php echo $sipariscek['sip_aciliyet']; ?></td>
-                <td><?php echo $sipariscek['sip_durum']; ?></td>
+                <td><?php 
+                if ($sipariscek['sip_aciliyet']=="Acil") {
+                  echo '<span class="badge badge-danger" style="font-size:1rem">Acil</span>';
+                } else {
+                  echo $sipariscek['sip_aciliyet'];
+                }
+                ?></td>
+                <td><?php 
+                if ($sipariscek['sip_durum']=="Bitti") {
+                  echo '<span class="badge badge-success" style="font-size:1rem">Bitti</span>';
+                } else {
+                  echo $sipariscek['sip_durum'];
+                }
+                ?></td>
                 <td> 
                   <?php 
                   if (yetkikontrol()=="yetkili") {?>
@@ -201,6 +213,19 @@ include'header.php'
             </tr>
           <?php } ?>
         </tbody>
+        <tfoot>
+          <tr> 
+            <th>No</th>
+            <th>İsim</th>
+            <th>E-Mail</th>
+            <th>Siparş Başlığı</th>
+            <th>Bitiş Tarihi</th>
+            <th>Aciliyet</th>
+            <th>Durum</th>
+            <th>İşlem</th>
+
+          </tr>
+        </tfoot>
         <!--While döngüsü ile veritabanında ki verilerin tabloya çekilme işlemi çıkış-->
       </table>
     </div>
@@ -234,6 +259,33 @@ include'header.php'
 </script>
 <script>
   var dataTables = $('#dataTable').DataTable({
+   initComplete: function () {
+    this.api().columns([1,2,4,5,6]).every( function () {
+      var column = this;
+      var select = $('<select class="filtre"><option value=""></option></select>')
+      .appendTo( $(column.footer()).empty() )
+      .on( 'change', function () {
+        var val = $.fn.dataTable.util.escapeRegex(
+          $(this).val()
+          );
+
+        column
+        .search( val ? '^'+val+'$' : '', true, false )
+        .draw();
+      });
+
+      column.data().unique().sort().each( function ( d, j ) {
+        var val = $('<div/>').html(d).text();
+          
+          if (val.length>29) {
+            filtremetin =  val.substr(0,30)+"...";
+          } else {
+            filtremetin=val;
+          }
+          select.append( '<option value="' + val + '">' + filtremetin + '</option>' )
+      });
+    });
+  },
     "ordering": true,  //Tabloda sıralama özelliği gözüksün mü? true veya false
     "searching": true,  //Tabloda arama yapma alanı gözüksün mü? true veya false
     "lengthChange": true, //Tabloda öğre gösterilme gözüksün mü? true veya false
