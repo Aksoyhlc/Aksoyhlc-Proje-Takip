@@ -1,6 +1,10 @@
+
 **Scripte ait ekran görüntüleri sayfanın en altında. Projenin en güncel ve güvenli halini bu sayfadan indirebilirsiniz. Buranın dışında indirdiğiniz dosyalara güvenmeyin.**
 
 ***Demo Linki:***  http://istakip.aksoyhlc.net/
+
+***Direkt İndirme Linki:***  
+https://github.com/Aksoyhlc/Aksoyhlc-Proje-Takip/archive/master.zip
 
 **E-Posta: aksoyhlc@gmail.com
 Şifre: 123**
