@@ -44,11 +44,11 @@ if (isset($_POST['sip_id'])) {
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label>İsim Soyisim</label>
-									<input type="text" class="form-control" name="musteri_isim" value="<?php echo $kayitcek['musteri_isim'] ?>">
+									<input type="text" class="form-control" required name="musteri_isim" value="<?php echo $kayitcek['musteri_isim'] ?>">
 								</div>
 								<div class="form-group col-md-6">
 									<label>E-Posta</label>
-									<input type="email" class="form-control" name="musteri_mail" value="<?php echo $kayitcek['musteri_mail'] ?>">
+									<input type="email" class="form-control"  name="musteri_mail" value="<?php echo $kayitcek['musteri_mail'] ?>">
 								</div>	
 							</div>
 							<div class="form-row">
@@ -58,7 +58,7 @@ if (isset($_POST['sip_id'])) {
 								</div>
 								<div class="form-group col-md-6">
 									<label>Sipariş Başlığı</label>
-									<input type="text" class="form-control" name="sip_baslik" value="<?php echo $kayitcek['sip_baslik'] ?>">
+									<input type="text" class="form-control" required name="sip_baslik" value="<?php echo $kayitcek['sip_baslik'] ?>">
 								</div>
 							</div>
 							<div class="form-row">
