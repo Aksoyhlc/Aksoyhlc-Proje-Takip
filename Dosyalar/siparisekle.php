@@ -45,7 +45,7 @@ if (yetkikontrol()!="yetkili") {
       </div>
       <div class="form-group col-md-6">
         <label>Ücret (TL)</label>
-        <input type="number" class="form-control" required name="sip_ucret" placeholder="Siparişinizin Ücretini Girin">
+        <input type="number" class="form-control" name="sip_ucret" placeholder="Siparişinizin Ücretini Girin">
       </div>
     </div>
     <div class="form-row">
@@ -55,7 +55,7 @@ if (yetkikontrol()!="yetkili") {
       </div>
       <div class="form-group col-md-6">
         <label>Aciliyet</label>
-        <select required required name="sip_aciliyet" class="form-control">
+        <select required name="sip_aciliyet" class="form-control">
           <option>Acil</option>
           <option>Normal</option>
           <option>Acelesi Yok</option>
@@ -65,13 +65,13 @@ if (yetkikontrol()!="yetkili") {
     <div class="form-row d-flex justify-content-center mb-3">
       <div class="col-md-6">
         <div class="file-loading">
-          <input class="form-control" id="sip_dosya" required name="sip_dosya" type="file">
+          <input class="form-control" id="sip_dosya" name="sip_dosya" type="file">
         </div>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-12">
-        <textarea class="ckeditor" required name="sip_detay" id="editor"></textarea>
+        <textarea class="ckeditor" name="sip_detay" id="editor"></textarea>
       </div>
     </div>
     <button type="submit" name="siparisekle" class="btn btn-primary">Kaydet</button>
