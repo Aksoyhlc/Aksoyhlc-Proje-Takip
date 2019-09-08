@@ -488,10 +488,10 @@ if (isset($_POST['profilguncelle'])) {
               ));
       //www.aksoyhlc.net tarafından hazırlanmıştır
                if ($ekleme) {
-                header("Location:../kullanicilar?durum=ok");
+                header("Location:../profil?durum=ok");
               } else {
 
-                header("Location:../kullanicilar?durum=no");
+                header("Location:../profil?durum=no");
               }
               exit;
             } else {
