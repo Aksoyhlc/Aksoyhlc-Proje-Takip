@@ -1,4 +1,3 @@
-
 <?php 
 include 'header.php';
 if (isset($_POST['kul_id'])) {
