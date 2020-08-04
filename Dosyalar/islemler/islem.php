@@ -12,8 +12,8 @@ Bu programla birlikte GNU Genel Kamu Lisansı’nın bir kopyasını elde etmiş
 
  */
 
-ob_start();
-session_start();
+@ob_start();
+@session_start();
 include 'baglan.php';
 include '../fonksiyonlar.php';
 
