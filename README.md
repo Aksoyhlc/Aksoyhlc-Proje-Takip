@@ -37,7 +37,7 @@ Diğer Bilgiler:
 # Ekran Görüntüleri:
 
 ------------
-![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-1.png")
+![Aksoyhlc İş-Proje Takip Scripti](https://github.com/Aksoyhlc/Aksoyhlc-Proje-Takip/tree/master/Ekran%20G%C3%B6r%C3%BCnt%C3%BCleri#:~:text=Aksoyhlc%20%C4%B0%C5%9F%2DProje%20Takip%20Scripti%2D1.png")
 
 ![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-2.png")
 
