@@ -43,15 +43,15 @@ Diğer Bilgiler:
 
 ![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-3.png)
 
-![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-4.png")
+![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-4.png)
 
-![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-5.png")
+![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-5.png)
 
-![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-6.png")
+![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-6.png)
 
-![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-7.png")
+![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-7.png)
 
-![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-8.png")
+![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-8.png)
 
-![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-9.png")
+![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-9.png)
 
