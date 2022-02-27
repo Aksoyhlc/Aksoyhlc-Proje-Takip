@@ -37,11 +37,11 @@ Diğer Bilgiler:
 # Ekran Görüntüleri:
 
 ------------
-![Aksoyhlc İş-Proje Takip Scripti](https://github.com/Aksoyhlc/Aksoyhlc-Proje-Takip/raw/master/Ekran%20G%C3%B6r%C3%BCnt%C3%BCleri/Aksoyhlc%20%C4%B0%C5%9F-Proje%20Takip%20Scripti-1.png")
+![Aksoyhlc İş-Proje Takip Scripti](https://github.com/Aksoyhlc/Aksoyhlc-Proje-Takip/raw/master/Ekran%20G%C3%B6r%C3%BCnt%C3%BCleri/Aksoyhlc%20%C4%B0%C5%9F-Proje%20Takip%20Scripti-1.png)
 
-![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-2.png")
+![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-2.png)
 
-![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-3.png")
+![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-3.png)
 
 ![Aksoyhlc İş-Proje Takip Scripti](https://www.aksoyhlc.net/wp-content/uploads/2019/04/Aksoyhlc-İş-Proje-Takip-Scripti-4.png")
 
