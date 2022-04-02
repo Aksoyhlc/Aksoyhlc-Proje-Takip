@@ -1,7 +1,7 @@
 
+
 **Scripte ait ekran görüntüleri sayfanın en altında. Projenin en güncel ve güvenli halini bu sayfadan indirebilirsiniz. Buranın dışında indirdiğiniz dosyalara güvenmeyin.**
 
-***Demo Linki:***  http://istakip.aksoyhlc.net/
 
 ***Direkt İndirme Linki:***  
 https://github.com/Aksoyhlc/Aksoyhlc-Proje-Takip/archive/master.zip
@@ -10,20 +10,25 @@ https://github.com/Aksoyhlc/Aksoyhlc-Proje-Takip/archive/master.zip
 Şifre: 123**
 
 
-Yapmanız Gerekenler:
-=====================
+## Yapmanız Gerekenler
 Önce bir tane veritabanı oluşturun daha sonra klasör içerisinde ki SQL dosyasını içe aktarın.
 
-Değiştirmeniz Gerekenler:
-=========================
+## Değiştirmeniz Gerekenler
+
 islemler/baglan.php adresine girip veritabanı bilgilerinizi girin
 Daha sonra scripti açın ve giriş yapın ilk giriş bilgileriniz şunlar
+
 **E-Posta: aksoyhlc@gmail.com
 Şifre: 123**
+
 Giriş yaptıktan sonra sol menüde bulunan ayarlar ve profil bölümünü açıp  oraları kendinize göre doldurun.
 
-Diğer Bilgiler:
-===============
+## Mobil Uygulama Ve Masaüstü Program
+
+Mobil Uygulama ve Masaüstü Program halinde kullanmak isteyenler [https://github.com/Aksoyhlc/Aksoyhlc-Order-Project-Tracking-Application-Flutter-PHP](https://github.com/Aksoyhlc/Aksoyhlc-Order-Project-Tracking-Application-Flutter-PHP) burayı incelesin
+
+## Diğer Bilgiler:
+
 1) Şifreniz MD5 ile şifrelenerek veritabanına kayıt edilir bu yüzden şifrenizi lütfen oturum açtıktan sonra profilinizden değiştirin **direkt veritabanından değil.**
 
 2) islem.php dosyasında bol bol gördüğünüz guvenlik() fonksiyonu adından da anlaşılacağı üzere sitenizi xss, sql injection gibi açıklara karşı koruması için eklenmiştir.
