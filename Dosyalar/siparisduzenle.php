@@ -24,7 +24,7 @@ if (isset($_POST['sip_id'])) {
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="card shadow mb-4">
+			<div class="card br-1 shadow mb-4">
 				<div class="card-header py-3">
 					<h5 class="m-0 font-weight-bold text-primary">Sipariş Düzenleme İşlemi   
 						<small>
@@ -42,58 +42,71 @@ if (isset($_POST['sip_id'])) {
 					<div class="card-body">
 						<form action="islemler/islem.php" method="POST"  enctype="multipart/form-data"  data-parsley-validate>
 							<div class="form-row">
-								<div class="form-group col-md-6">
+								<div class="form-group col-md-4">
 									<label>İsim Soyisim</label>
 									<input type="text" class="form-control" required name="musteri_isim" value="<?php echo $kayitcek['musteri_isim'] ?>">
 								</div>
-								<div class="form-group col-md-6">
+								<div class="form-group col-md-4">
 									<label>E-Posta</label>
 									<input type="email" class="form-control"  name="musteri_mail" value="<?php echo $kayitcek['musteri_mail'] ?>">
 								</div>	
-							</div>
-							<div class="form-row">
-								<div class="form-group col-md-6">
+								<div class="form-group col-md-4">
 									<label>Telefon Numarası</label>
 									<input type="number" class="form-control" name="musteri_telefon" value="<?php echo $kayitcek['musteri_telefon'] ?>">
 								</div>
+							</div>
+							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label>Sipariş Başlığı</label>
 									<input type="text" class="form-control" required name="sip_baslik" value="<?php echo $kayitcek['sip_baslik'] ?>">
+								</div>
+								<div class="form-group col-md-6">
+									<label>Sipariş Tamamlanma Yüzdesi</label>
+									<input type="number" min="0" max="100" value="<?php echo $kayitcek['yuzde'] ?>" class="form-control" required name="yuzde" placeholder="Sipariş Tamamlanma Yüzdesi">
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label>Ücret (TL)</label>
-									<input type="number" class="form-control" name="sip_ucret" value="<?php echo $kayitcek['sip_ucret'] ?>">
+									<input type="number" class="form-control" required name="sip_ucret" value="<?php echo $kayitcek['sip_ucret'] ?>">
 								</div>
-								<?php $aciliyet=$kayitcek['sip_aciliyet']; ?>
-								<div class="form-group col-md-6">
-									<label>Aciliyet</label>
-									<select id="inputState" name="sip_aciliyet" class="form-control">
-										<option <?php if($aciliyet == 'Acil'){echo("selected");}?> value="Acil">Acil</option>
-										<option <?php if($aciliyet == 'Normal'){echo("selected");}?> value="Normal">Normal</option>
-										<option <?php if($aciliyet == 'Acelesi Yok'){echo("selected");}?> value="Acelesi Yok">Acelesi Yok</option>
-									</select>
-								</div>
+								
 							</div>
-							
-							<div class="form-row">	
+
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label>Başlangıç Tarihi</label>
+									<input required type="date" class="form-control" name="sip_baslama_tarih" value="<?php echo $kayitcek['sip_baslama_tarih'] ?>">
+								</div>
 								<div class="form-group col-md-6">
 									<label>Teslim Tarihi</label>
 									<input required type="date" class="form-control" name="sip_teslim_tarihi" value="<?php echo $kayitcek['sip_teslim_tarihi'] ?>">
 								</div>
+							</div>
+							
+							<div class="form-row">	
+								
 								<?php $durum=$kayitcek['sip_durum']; ?>
 								<div class="form-group col-md-6">
 									<label>Sipariş Durumu</label>
-									<select id="inputState" name="sip_durum" class="form-control">
-										<option <?php if($durum == 'Yeni Başladı'){echo("selected");}?> value="Yeni Başladı">Yeni Başladı</option>
-										<option <?php if($durum == 'Devam Ediyor'){echo("selected");}?> value="Devam Ediyor">Devam Ediyor</option>
-										<option <?php if($durum == 'Bitti'){echo("selected");}?> value="Bitti">Bitti</option>
+									<select id="inputState" name="sip_durum" required class="form-control">
+										<?php foreach (durum() as $key => $value): ?>
+											<option <?php if($durum == $key){echo("selected");}?> value="<?php echo $key ?>"><?php echo $value ?></option>
+										<?php endforeach ?>
+									</select>
+								</div>
+								<?php $aciliyet=$kayitcek['sip_aciliyet']; ?>
+								<div class="form-group col-md-6">
+									<label>Aciliyet</label>
+									<select id="inputState" required name="sip_aciliyet" class="form-control">
+										<?php foreach (aciliyet() as $key => $value): ?>
+											<option <?php if($aciliyet == $key){echo("selected");}?> value="<?php echo $key ?>"><?php echo $value ?></option>
+										<?php endforeach ?>
 									</select>
 								</div>
 							</div>			
 							<div class="form-row">
-								<div class="col-md-6">
+								<div class="col-md-6 mx-auto mt-3">
 									<div class="file-loading">
 										<input type="file" class="form-control" id="sipdosya" name="sip_dosya" >
 									</div>
@@ -110,7 +123,9 @@ if (isset($_POST['sip_id'])) {
 								</div>
 							</div>
 							<input type="hidden" class="form-control" name="sip_id" value="<?php echo $kayitcek['sip_id'] ?>">
-							<button type="submit" name="siparisguncelle" class="btn btn-success">Kaydet</button>
+							<div class="text-center">
+								<button type="submit" name="siparisguncelle" class="btn btn-success btn-lg"><i class="fa fa-save"></i> Kaydet</button>
+							</div>
 						</form>
 					</div>
 				</div>
@@ -118,10 +133,7 @@ if (isset($_POST['sip_id'])) {
 		</div>
 	</div>
 	<?php include 'footer.php' ?>
-	<script src="ckeditor/ckeditor.js"></script>
-	<script>
-		CKEDITOR.replace( 'editor' );
-	</script>
+
 	<?php 
 	if (strlen($kayitcek['dosya_yolu'])>10) {?>
 		<script>
@@ -135,7 +147,7 @@ if (isset($_POST['sip_id'])) {
 			//	'initialPreviewAsData': true,
 			allowedFileExtensions: ["jpg", "png", "jpeg", "mp4", "zip", "rar"],
 			initialPreview: [
-			'<img src="<?php echo $kayitcek['dosya_yolu'] ?>" style="height:90px" class="file-preview-image" alt="Dosya" title="Dosya">'
+			'<img src="dosyalar/<?php echo $kayitcek['dosya_yolu'] ?>" style="height:90px" class="file-preview-image" alt="Dosya" title="Dosya">'
 			],
 			initialPreviewConfig: [
 			{downloadUrl: url1,

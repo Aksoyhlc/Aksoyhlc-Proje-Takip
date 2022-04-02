@@ -21,33 +21,42 @@ if (yetkikontrol()!="yetkili") {
         <div class="form-row">
           <div class="form-group col-md-6">
             <label>Proje Başlık</label>
-            <input type="text" class="form-control" name="proje_baslik" placeholder="Projenin Başlığı">
+            <input type="text" class="form-control"  required="" name="proje_baslik" placeholder="Projenin Başlığı">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Başlangıç Tarihi</label>
+            <input type="date" class="form-control" required="" name="proje_baslama_tarihi" placeholder="Başlangıç Tarihi">
           </div>
           <div class="form-group col-md-6">
             <label>Bitirme Tarihi</label>
-            <input type="date" class="form-control" name="proje_teslim_tarihi" placeholder="Projenin Bitirilmesi Gereken Tarih">
+            <input type="date" class="form-control"  required="" name="proje_teslim_tarihi" placeholder="Projenin Bitirilmesi Gereken Tarih">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label>Proje Durumu</label>
-            <select name="proje_durum" class="form-control">
-              <option>Yeni Başladı</option>
-              <option>Devam Ediyor</option>
-              <option>Bitti</option>
+            <select required="" name="proje_durum" class="form-control">
+              <?php foreach (durum() as $key => $value): ?>
+                <option value="<?php echo $key ?>"><?php echo $value ?></option>
+              <?php endforeach ?>
             </select>
           </div>
 
           <div class="form-group col-md-6">
             <label for="inputState">Aciliyet</label>
             <select required name="proje_aciliyet" class="form-control">
-              <option>Acil</option>
-              <option>Normal</option>
-              <option>Acelesi Yok</option>
+              <?php foreach (aciliyet() as $key => $value): ?>
+                <option value="<?php echo $key ?>"><?php echo $value ?></option>
+              <?php endforeach ?>
             </select>
           </div>
         </div>
-
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Proje Tamamlanma Yüzdesi</label>
+            <input type="number" min="0" max="100" value="0" class="form-control" required name="yuzde" placeholder="Proje Tamamlanma Yüzdesi">
+          </div>
+        </div>
         <div class="form-row justify-content-center">
          <div class="col-md-6">
           <div class="file-loading">
@@ -67,11 +76,7 @@ if (yetkikontrol()!="yetkili") {
 </div>
 <!-- End of Main Content -->
 <?php include 'footer.php' ?>
-<script src="ckeditor/ckeditor.js"></script>
-<script>
- CKEDITOR.replace('editor',{
- });
-</script>
+
 <script>
   $(document).ready(function () {
     var url1='<?php echo $ayarcek['site_logo'] ?>';

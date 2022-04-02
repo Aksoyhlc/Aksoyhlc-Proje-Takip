@@ -4,7 +4,24 @@ Aksoyhlc İş-Proje Takip Scripti
 Copyright (C) 2019 Ökkeş Aksoy
  */
 
-// tüm boşlukları silme
+
+function aciliyet()
+{
+	return [
+		0 => 'Acil',
+		1 => 'Normal',
+		2 => 'Acelesi Yok',
+	];
+}
+
+function durum()
+{
+	return [
+		0 => 'Yeni Başladı',
+		1 => 'Devam Ediyor',
+		2 => 'Bitti',
+	];
+}
 
 function turkce_temizle($metin) {
 	$turkce=array("ş","Ş","ı","ü","Ü","ö","Ö","ç","Ç","ş","Ş","ı","ğ","Ğ","İ","ö","Ö","Ç","ç","ü","Ü");
@@ -44,10 +61,15 @@ function yetkikontrol() {
 	}
 };
 
+function bos($metin)
+{
+	return $metin;
+}
+
 function oturumkontrol() {
 	include 'islemler/baglan.php';
 	if (empty($_SESSION['kul_mail']) or empty($_SESSION['kul_id'])) {
-		header("location:login.php?durum=izinsiz");
+		header("location:login.php?durum=girisyapin");
 		exit;
 	} else {
 
@@ -59,7 +81,7 @@ function oturumkontrol() {
 		$say=$kullanici->rowcount();
 		$kullanicicek=$kullanici->fetch(PDO::FETCH_ASSOC);
 		if ($say==0) {
-			header("location:login.php?durum=izinsiz");
+			header("location:login.php?durum=girisyapin");
 			exit;
 		}
 	}	

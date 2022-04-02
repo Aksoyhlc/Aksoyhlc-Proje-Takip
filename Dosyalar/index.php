@@ -368,27 +368,3 @@ include 'footer.php';
 });
 </script>
 
-<?php 
-if (isset($_GET['durum'])) {?>
-	<?php if ($_GET['durum']=="izinsiz")  {?>	
-		<script>
-			Swal.fire({
-				type: 'error',
-				title: 'İzniniz Yok',
-				text: 'Girme İzniniz olmayan bir alana girmeye çalıştınız',
-				showConfirmButton: false,
-				timer: 2000
-			})
-		</script>
-	<?php } ?>
-	<?php if ($_GET['durum']=="ok")  {?>	
-		<script>
-			Swal.fire({
-				type: 'success',
-				title: 'İşlem Başarılı',
-				text: 'İşleminiz Başarıyla Gerçekleştirildi',
-				showConfirmButton: false,
-				timer: 2000
-			})
-		</script>
-	<?php } } ?>

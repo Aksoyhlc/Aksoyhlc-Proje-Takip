@@ -76,26 +76,32 @@ if (isset($_POST['kul_id'])) {
         <input type="text" required class="form-control" value="<?php echo $kullanicicek['kul_unvan'] ?>" name="kul_unvan" placeholder="Kullanıcı Ünvanı/Mesleği">
       </div>
     </div>
-    <input type="hidden" name="kul_id" value="<?php echo $kullanicicek['kul_id'] ?>">
-    <center>
-      <div class="form-row col-md-6 justify-content-center mb-3">
+
+    <div class="form-row">
+
+      <div class="col-md-6 mb-3">
+        <label>Şifre <small>(Bu alanı boş bırakırsanız şifreniz değişmez)</small></label>
+        <input type="text" class="form-control" name="kul_sifre" placeholder="Şifre">
+      </div>
+      <div class="col-md-6 mb-3">
         <label>Profil Resmi</label>
         <div class="file-loading">
           <input class="form-control" id="profilresmi" name="kul_logo" type="file">
         </div>
       </div>
-    </center>
-    <div class="row ml-1">
+
+    </div>
+
+
+    <div class="text-center">
      <button type="submit" name="profilguncelle" class="btn btn-primary">Kaydet</button> 
    </form>
    <form class="ml-2" action="sifreguncelle.php" method="POST" accept-charset="utf-8">
-    <input type="hidden" name="kul_id" value="<?php echo $kullanicicek['kul_id'] ?>">
-    <button type="submit" name="xxx" class="btn btn-danger">Şifre Sıfırla</button>
-  </form> 
-</div>
+   </form> 
+ </div>
 </div>
 <hr>
-<?php include 'footer.php' ?>
+<?php require_once 'footer.php' ?>
 <script type="text/javascript">
   $("#aktarmagizleme").click(function(){
     $(".dt-buttons").toggle();
@@ -121,59 +127,3 @@ if (isset($_POST['kul_id'])) {
   });
 </script>
 
-<?php if (@$_GET['durum']=="no")  {?>  
-  <script>
-    Swal.fire({
-      type: 'error',
-      title: 'İşlem Başarısız',
-      text: 'Lütfen Tekrar Deneyin',
-      showConfirmButton: true,
-      confirmButtonText: 'Kapat'
-    })
-  </script>
-<?php } ?>
-<?php if (@$_GET['durum']=="eskisifrehata")  {?>  
-  <script>
-    Swal.fire({
-      type: 'error',
-      title: 'İşlem Başarısız',
-      text: 'Eski Şifreniz Hatalı Lütfen Eski Şifrenizi Doğru Girin',
-      showConfirmButton: true,
-      confirmButtonText: 'Kapat'
-    })
-  </script>
-<?php } ?>
-<?php if (@$_GET['durum']=="sifreleruyusmuyor")  {?>  
-  <script>
-    Swal.fire({
-      type: 'error',
-      title: 'İşlem Başarısız',
-      text: 'Girdiğiniz Şifreler Aynı Değil Lütfen Girdiğiniz Şifreleri Kontrol Edin',
-      showConfirmButton: true,
-      confirmButtonText: 'Kapat'
-    })
-  </script>
-<?php } ?>
-<?php if (@$_GET['durum']=="ok")  {?>  
-  <script>
-    Swal.fire({
-      type: 'success',
-      title: 'İşlem Başarılı',
-      text: 'İşleminiz Başarıyla Gerçekleştirildi',
-      showConfirmButton: false,
-      timer: 2000
-    })
-  </script>
-<?php } ?>
-
-<?php if (@$_GET['durum']=="sifredegisti")  {?>  
-  <script>
-    Swal.fire({
-      type: 'success',
-      title: 'İşlem Başarılı',
-      text: 'İşleminiz Başarıyla Gerçekleştirildi',
-      showConfirmButton: false,
-      timer: 2000
-    })
-  </script>
-  <?php } ?>

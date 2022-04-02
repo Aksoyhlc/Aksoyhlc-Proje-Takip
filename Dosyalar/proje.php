@@ -42,6 +42,10 @@ $dosyayolu=$projecek['dosya_yolu'];
 								<input disabled type="text" class="form-control" name="proje_baslik" value="<?php echo $projecek['proje_baslik'] ?>">
 							</div>
 							<div class="form-group col-md-6">
+									<label>Başlama Tarihi</label>
+									<input disabled="" type="date" class="form-control" name="proje_baslama_tarihi" value="<?php echo $projecek['proje_baslama_tarihi'] ?>">
+								</div>
+							<div class="form-group col-md-6">
 								<label>Bitirme Tarihi</label>
 								<input disabled type="date" class="form-control" name="proje_teslim_tarihi" value="<?php echo $projecek['proje_teslim_tarihi'] ?>">
 							</div>
@@ -51,14 +55,20 @@ $dosyayolu=$projecek['dosya_yolu'];
 							<?php $aciliyet=$projecek['proje_aciliyet']; ?>
 							<div disabled class="form-group col-md-6">
 								<label>Aciliyet</label>
-								<input disabled type="text" class="form-control" value="<?php echo $aciliyet ?>">
+								<input disabled type="text" class="form-control" value="<?php echo aciliyet()[$aciliyet] ?>">
 							</div>
 							<?php $durum=$projecek['proje_durum']; ?>
 							<div disabled class="form-group col-md-6">
 								<label>Proje Durumu</label>
-								<input disabled type="text" class="form-control" value="<?php echo $durum ?>">
+								<input disabled type="text" class="form-control" value="<?php echo durum()[$durum] ?>">
 							</div>
-						</div>								
+						</div>	
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label>Proje Tamamlanma Yüzdesi</label>
+								<input type="number" min="0" max="100" value="<?php echo $projecek['yuzde'] ?>" class="form-control" disabled name="yuzde" placeholder="Proje Tamamlanma Yüzdesi">
+							</div>
+						</div>							
 						<div class="form-row">
 							<div class="form-group col-md-12">
 								<textarea disabled class="ckeditor" id="editor"><?php echo $projenindetaymetni; ?></textarea>
@@ -83,8 +93,7 @@ $dosyayolu=$projecek['dosya_yolu'];
 <?php include 'footer.php' ?>
 <script src="ckeditor/ckeditor.js"></script>
 <script>
-	CKEDITOR.replace('editor',{
-	});
+	CKEDITOR.replace('editor');
 </script>
 
 <?php 
@@ -102,7 +111,7 @@ if (strlen($dosyayolu)>10) {?>
 				//	'initialPreviewAsData': true,
 				
 				initialPreview: [
-				'<img src="<?php echo $dosyayolu ?>" style="height:100px" class="file-preview-image" alt="Dosya" title="Dosya">'
+				'<img src="dosyalar/<?php echo $dosyayolu ?>" style="height:100px" class="file-preview-image" alt="Dosya" title="Dosya">'
 				],
 				initialPreviewConfig: [
 				{downloadUrl: url1,

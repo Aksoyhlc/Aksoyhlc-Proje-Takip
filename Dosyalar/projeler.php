@@ -394,39 +394,3 @@ include'header.php'
     dataTables.column(4).search("Yeni Başladı").draw();
   });
 </script>
-
-<?php if (@$_GET['durum']=="no")  {?>  
-  <script>
-    Swal.fire({
-      type: 'error',
-      title: 'İşlem Başarısız',
-      text: 'Lütfen Tekrar Deneyin',
-      showConfirmButton: true,
-      confirmButtonText: 'Kapat'
-    })
-  </script>
-<?php } ?>
-
-<?php if (@$_GET['durum']=="ok")  {?>  
-  <script>
-    Swal.fire({
-      type: 'success',
-      title: 'İşlem Başarılı',
-      text: 'İşleminiz Başarıyla Gerçekleştirildi',
-      showConfirmButton: false,
-      timer: 2000
-    })
-  </script>
-<?php } ?>
-
-<?php if (@$_GET['durum']=="hata")  {?>  
-  <script>
-    Swal.fire({
-      type: 'error',
-      title: 'İşlem Başarısız',
-      text: 'Yapmamanız Gereken Şeyler Yapıyorsunuz!',
-      showConfirmButton: false,
-      timer: 3000
-    })
-  </script>
-  <?php } ?>

@@ -48,21 +48,28 @@ if ($kullanicicek['ip_adresi']!=$_SERVER['REMOTE_ADDR']) {
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="<?php echo $ayarcek['site_aciklama'] ?>">
 	<meta name="author" content="<?php echo $ayarcek['site_sahibi'] ?>">
-	<link rel="shortcut icon" type="image/png" href="<?php echo $ayarcek['site_logo'] ?>">
+	<link rel="shortcut icon" type="image/png" href="dosyalar/<?php echo $ayarcek['site_logo'] ?>">
 
 	<title><?php echo $ayarcek['site_baslik'] ?></title>
 
 	<!-- Custom fonts for this template-->
-	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 	
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	   <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 	<!-- Custom styles for this template-->
 	<link href="css/sb-admin-2.min.css" rel="stylesheet">
 	<style type="text/css" media="screen">
 		.file-details-cell {
 			display: none
+		}.kv-file-remove {
+			display: none
+		}
+		.br-1{
+			border-radius: 1rem;
 		}
 	</style>
 	
@@ -77,7 +84,7 @@ if ($kullanicicek['ip_adresi']!=$_SERVER['REMOTE_ADDR']) {
 			<li class="nav-item mt-1 mb-1">
 				<center>
 					<a class="nav-link" style="text-align: center;" href="index.php" title="Ana Sayfa">
-						<img style="width: 50%; height: auto;" src="<?php echo $ayarcek['site_logo'] ?>" alt="<?php echo $ayarcek['site_baslik'] ?>">
+						<img style="width: 50%; height: auto;" src="dosyalar/<?php echo $ayarcek['site_logo'] ?>" alt="<?php echo $ayarcek['site_baslik'] ?>">
 					</a>
 				</center>
 			</li>
@@ -204,7 +211,7 @@ if ($kullanicicek['ip_adresi']!=$_SERVER['REMOTE_ADDR']) {
 									</span>
 									<?php 
 									if (strlen($kullanicicek['kul_logo'])>0) {?>
-										<img class="img-profile rounded-circle" width="200"  src="<?php echo $kullanicicek['kul_logo']; ?>">
+										<img class="img-profile rounded-circle" width="200"  src="dosyalar/<?php echo $kullanicicek['kul_logo']; ?>">
 									<?php } else {?>
 										<img class="img-profile rounded-circle" width="200"  src="img/logo-yok.png">
 									<?php } ?>

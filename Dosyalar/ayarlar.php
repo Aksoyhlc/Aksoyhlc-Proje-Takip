@@ -57,7 +57,7 @@ if (yetkikontrol()!="yetkili") {
 		</div>
 		<div class="card-footer">
 			<div class="form-row">
-				<p>Scriptin Ücretli Ve Çok Daha Fazla Gelişmiş Özelliklere Sahip Sürümünü İncelemek İçin <span><strong><a href="https://link.aksoyhlc.net/aksoyhlc-crm" target="_blank">Buraya Tıklayın</a></strong></span></p>
+				<p>Scriptin Daha Fazla Ve Gelişmiş Özelliklere Sahip Sürümünü İncelemek İçin <span><strong><a href="https://link.aksoyhlc.net/aksoyhlc-crm" target="_blank">Buraya Tıklayın</a></strong></span></p>
 			</div>
 		</div>
 	</div>
@@ -70,7 +70,7 @@ if (yetkikontrol()!="yetkili") {
 			minFileSize: 5,
 			allowedFileExtensions: ["jpg", "png", "jpeg","mp4","zip"],
 			initialPreview: [
-			"<img src='<?php echo $ayarcek['site_logo'] ?>' style='height:90px' class='file-preview-image' alt='Logo' title='Logo'>"
+			"<img src='dosyalar/<?php echo $ayarcek['site_logo'] ?>' style='height:90px' class='file-preview-image' alt='Logo' title='Logo'>"
 			],
 		});
 	});

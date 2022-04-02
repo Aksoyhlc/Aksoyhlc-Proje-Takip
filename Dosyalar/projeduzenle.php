@@ -51,6 +51,10 @@ $dosyayolu=$projecek['dosya_yolu']
 									<input required type="text" class="form-control" name="proje_baslik" value="<?php echo $projecek['proje_baslik'] ?>">
 								</div>
 								<div class="form-group col-md-6">
+									<label>Başlama Tarihi</label>
+									<input required type="date" class="form-control" name="proje_baslama_tarihi" value="<?php echo $projecek['proje_baslama_tarihi'] ?>">
+								</div>
+								<div class="form-group col-md-6">
 									<label>Bitirme Tarihi</label>
 									<input required type="date" class="form-control" name="proje_teslim_tarihi" value="<?php echo $projecek['proje_teslim_tarihi'] ?>">
 								</div>
@@ -60,23 +64,28 @@ $dosyayolu=$projecek['dosya_yolu']
 								<?php $aciliyet=$projecek['proje_aciliyet']; ?>
 								<div required class="form-group col-md-6">
 									<label>Aciliyet</label>
-									<select id="inputState" name="proje_aciliyet" class="form-control">
-										<option <?php if($aciliyet == 'Acil'){echo("selected");}?> value="Acil">Acil</option>
-										<option <?php if($aciliyet == 'Normal'){echo("selected");}?> value="Normal">Normal</option>
-										<option <?php if($aciliyet == 'Acelesi Yok'){echo("selected");}?> value="Acelesi Yok">Acelesi Yok</option>
+									<select id="inputState" required="" name="proje_aciliyet" class="form-control">
+										<?php foreach (aciliyet() as $key => $value): ?>
+											<option <?php if($aciliyet == $key){echo("selected");}?> value="<?php echo $key ?>"><?php echo $value ?></option>
+										<?php endforeach ?>
 									</select>
 								</div>
 								<?php $durum=$projecek['proje_durum']; ?>
 								<div required class="form-group col-md-6">
 									<label>Proje Durumu</label>
-									<select name="proje_durum" class="form-control">
-										<option <?php if($durum == 'Yeni Başladı'){echo("selected");}?> value="Yeni Başladı">Yeni Başladı</option>
-										<option <?php if($durum == 'Devam Ediyor'){echo("selected");}?> value="Devam Ediyor">Devam Ediyor</option>
-										<option <?php if($durum == 'Bitti'){echo("selected");}?> value="Bitti">Bitti</option>
+									<select required="" name="proje_durum" class="form-control">
+										<?php foreach (durum() as $key => $value): ?>
+											<option <?php if($durum == $key){echo("selected");}?> value="<?php echo $key ?>"><?php echo $value ?></option>
+										<?php endforeach ?>
 									</select>
 								</div>
 							</div>
-
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label>Proje Tamamlanma Yüzdesi</label>
+									<input type="number" min="0" max="100" value="<?php echo $projecek['yuzde'] ?>" class="form-control" required name="yuzde" placeholder="Proje Tamamlanma Yüzdesi">
+								</div>
+							</div>
 							<div class="form-row justify-content-center">	
 								<div class="col-md-6">
 									<div class="file-loading">
@@ -99,10 +108,7 @@ $dosyayolu=$projecek['dosya_yolu']
 	</div>
 </div>
 <?php include 'footer.php' ?>
-<script src="ckeditor/ckeditor.js"></script>
-<script>
-	CKEDITOR.replace( 'editor' );
-</script>
+
 <?php 
 if (strlen($dosyayolu)>10) {?>
 	<script>
@@ -116,7 +122,7 @@ if (strlen($dosyayolu)>10) {?>
 			//	'initialPreviewAsData': true,
 			allowedFileExtensions: ["jpg", "png", "jpeg", "mp4", "zip", "rar"],
 			initialPreview: [
-			'<img src="<?php echo $dosyayolu ?>" style="height:100px" class="file-preview-image" alt="Dosya" title="Dosya">'
+			'<img src="dosyalar/<?php echo $dosyayolu ?>" style="height:100px" class="file-preview-image" alt="Dosya" title="Dosya">'
 			],
 			initialPreviewConfig: [
 			{downloadUrl: url1,
@@ -141,4 +147,4 @@ if (strlen($dosyayolu)>10) {?>
 
 		});
 	</script>
-	<?php } ?>
+<?php } ?>

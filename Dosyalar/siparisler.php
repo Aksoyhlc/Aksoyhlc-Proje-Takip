@@ -166,17 +166,17 @@ include'header.php'
                 <td><?php echo $sipariscek['sip_baslik']; ?></td>
                 <td><?php echo $sipariscek['sip_teslim_tarihi']; ?></td>
                 <td><?php 
-                if ($sipariscek['sip_aciliyet']=="Acil") {
+                if ($sipariscek['sip_aciliyet']==0) {
                   echo '<span class="badge badge-danger" style="font-size:1rem">Acil</span>';
                 } else {
-                  echo $sipariscek['sip_aciliyet'];
+                  echo aciliyet()[$sipariscek['sip_aciliyet']];
                 }
                 ?></td>
                 <td><?php 
-                if ($sipariscek['sip_durum']=="Bitti") {
+                if ($sipariscek['sip_durum']==2) {
                   echo '<span class="badge badge-success" style="font-size:1rem">Bitti</span>';
                 } else {
-                  echo $sipariscek['sip_durum'];
+                  echo durum()[$sipariscek['sip_durum']];
                 }
                 ?></td>
                 <td> 
@@ -396,27 +396,3 @@ include'header.php'
     dataTables.column(6).search("Yeni Başladı").draw();
   });
 </script>
-
-<?php if (@$_GET['durum']=="no")  {?>  
-  <script>
-    Swal.fire({
-      type: 'error',
-      title: 'İşlem Başarısız',
-      text: 'Lütfen Tekrar Deneyin',
-      showConfirmButton: true,
-      confirmButtonText: 'Kapat'
-    })
-  </script>
-<?php } ?>
-
-<?php if (@$_GET['durum']=="ok")  {?>  
-  <script>
-    Swal.fire({
-      type: 'success',
-      title: 'İşlem Başarılı',
-      text: 'İşleminiz Başarıyla Gerçekleştirildi',
-      showConfirmButton: false,
-      timer: 2000
-    })
-  </script>
-  <?php } ?>

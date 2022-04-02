@@ -39,29 +39,37 @@ $dosyayolu=$sipariscek['dosya_yolu'];
 				<div class="card-body">
 					<form action="islemler/islem.php" method="POST">
 						<div class="form-row">
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-4">
 								<label>İsim Soyisim</label>
 								<input disabled="" type="text" class="form-control" name="musteri_isim" value="<?php echo $sipariscek['musteri_isim'] ?>">
 							</div>
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-4">
 								<label>E-Posta</label>
 								<input disabled="" type="email" class="form-control" name="musteri_mail" value="<?php echo $sipariscek['musteri_mail'] ?>">
+							</div>
+							<div class="form-group col-md-4">
+								<label>Telefon Numarası</label>
+								<input disabled="" type="number" class="form-control" name="musteri_telefon" value="<?php echo $sipariscek['musteri_telefon'] ?>">
 							</div>	
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label>Telefon Numarası</label>
-								<input disabled="" type="number" class="form-control" name="musteri_telefon" value="<?php echo $sipariscek['musteri_telefon'] ?>">
-							</div>
-							<div class="form-group col-md-6">
 								<label>Sipariş Başlığı</label>
 								<input disabled="" type="text" class="form-control" name="sip_baslik" value="<?php echo $sipariscek['sip_baslik'] ?>">
+							</div>
+							<div class="form-group col-md-6">
+								<label>Sipariş Tamamlanma Yüzdesi</label>
+								<input type="number" min="0" max="100" disabled="" value="<?php echo $kayitcek['yuzde'] ?>" class="form-control" required name="yuzde" placeholder="Sipariş Tamamlanma Yüzdesi">
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<label>Ücret (TL)</label>
 								<input disabled="" type="text" class="form-control" name="sip_ucret" value="<?php echo $sipariscek['sip_ucret'] ?>">
+							</div>
+							<div class="form-group col-md-6">
+								<label>Başlangıç Tarihi</label>
+								<input required type="date" class="form-control" name="sip_baslama_tarih" value="<?php echo $kayitcek['sip_baslama_tarih'] ?>">
 							</div>
 							<div class="form-group col-md-6">
 								<label>Bitirme Tarihi</label>
@@ -73,16 +81,16 @@ $dosyayolu=$sipariscek['dosya_yolu'];
 							<?php $aciliyet=$sipariscek['sip_aciliyet']; ?>
 							<div disabled class="form-group col-md-6">
 								<label>Aciliyet</label>
-								<input disabled type="text" class="form-control" value="<?php echo $aciliyet ?>">
+								<input disabled type="text" class="form-control" value="<?php echo aciliyet()[$aciliyet] ?>">
 							</div>
 							<?php $durum=$sipariscek['sip_durum']; ?>
 							<div disabled class="form-group col-md-6">
 								<label>Sipariş Durumu</label>
-								<input disabled type="text" class="form-control" value="<?php echo $durum ?>">
+								<input disabled type="text" class="form-control" value="<?php echo durum()[$durum] ?>">
 							</div>
 						</div>
 
-											
+
 						<div class="form-row">
 							<div class="form-group col-md-12">
 								<textarea disabled class="ckeditor" id="editor">
@@ -130,7 +138,7 @@ if (strlen($dosyayolu)>10) {?>
 				//	'initialPreviewAsData': true,
 				allowedFileExtensions: ["jpg", "png", "jpeg", "mp4", "zip", "rar"],
 				initialPreview: [
-				'<img src="<?php echo $dosyayolu ?>" style="height:100px" class="file-preview-image" alt="Önizleme Yok" title="Önzileme Yok">',
+				'<img src="dosyalar/<?php echo $dosyayolu ?>" style="height:100px" class="file-preview-image" alt="Önizleme Yok" title="Önzileme Yok">',
 				],
 				initialPreviewConfig: [
 				{downloadUrl: url1,
