@@ -34,7 +34,7 @@ Mobil Uygulama ve Masaüstü Program halinde kullanmak isteyenler [https://githu
 
 2) islem.php dosyasında bol bol gördüğünüz guvenlik() fonksiyonu adından da anlaşılacağı üzere sitenizi xss, sql injection gibi açıklara karşı koruması için eklenmiştir.
 
-3) Güvenlik amacıyla sadece bir tane cihazda oturum açmanıza izin verilir ikinci bir cihazda oturum açtığınız zaman diğer cihazdan otomatik olarak çıkış yapmış sayılırsınız bu özelliği kapatmak için mail atmanız yeterli.
+3) Güvenlik amacıyla sadece bir tane cihazda oturum açmanıza izin verilir ikinci bir cihazda oturum açtığınız zaman diğer cihazdan otomatik olarak çıkış yapmış sayılırsınız.
 
 4) Güvenlik amacıyla oturum açtığınızda IP adresiniz sizin kendi veritabanınıza kayıt edilir ve bulunduğunuz IP den başka bir IP ile oturum açılmaya çalışıldığında sizin oturumunuz sonlandırılır. Bu işlemin ve 2. ve 3. sıradaki işlemin amacı hesabınızın çalınmasını ve hack gibi olaylara karşı önlem almak içindir.
 
